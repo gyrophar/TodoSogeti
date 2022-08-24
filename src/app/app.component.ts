@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './services/api.service';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { TaskDialogComponent } from './modals/task-dialog/task-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,18 @@ import { ApiService } from './services/api.service';
 export class AppComponent implements OnInit {
   title = 'TodoApp';
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
 
   ngOnInit(): void {
   }
 
-  
+  openDialog() {
+    this.dialog.open(TaskDialogComponent, {
+      width: '30%'
+    }).afterClosed().subscribe( () => {
+      window.location.reload();
+    });
+  }
 
 }

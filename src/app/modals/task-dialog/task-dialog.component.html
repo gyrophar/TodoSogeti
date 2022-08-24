@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Add Task Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="todoForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Task Title</mat-label>
+            <input formControlName="title" matInput placeholder="Write the Task Title here">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Task Description</mat-label>
+            <input formControlName="description" matInput placeholder="Write the Task description here">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Task Status</mat-label>
+            <mat-select formControlName="status" placeholder="Task Status">
+                <mat-option value="true">Done</mat-option>
+                <mat-option value="false">To do</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="primary" (click)="addTask()">Save</button>
+    <button style="margin-left: 8px" mat-raised-button color="warn" mat-dialog-close>Close</button>
+</div>
