@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class TodoListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'status', 'statusChange'];
+  displayedColumns: string[] = ['id', 'title', 'status', 'actions'];
   dataSource!:  MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,7 +48,6 @@ export class TodoListComponent implements OnInit {
   changeTodoStatus(rowData: any) {
     rowData.status = !rowData.status;
     this.api.putTodoStatus(rowData, rowData.id);
-
   }
 
 }

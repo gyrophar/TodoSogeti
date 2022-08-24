@@ -1,0 +1,25 @@
+
+<div>
+    <button mat-stroked-button color="primary" routerLink="">Retour à la liste</button>
+</div>
+
+<div>
+    <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>TODO#{{routeId}}: {{cardData.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="cardData.description === ''">
+        This 'Todo' task does not have a description.
+      </p>
+      <p *ngIf="cardData.description != ''">
+        {{cardData.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" *ngIf="cardData.status === true" (click)="changeTodoStatus(cardData)">Undo Task</button>
+        <button mat-raised-button color="primary" *ngIf="cardData.status === false" (click)="changeTodoStatus(cardData)">Task Done</button>
+        <!-- <button mat-raised-button color="primary">Edit Task</button> -->
+    </mat-card-actions>
+  </mat-card>
+</div>

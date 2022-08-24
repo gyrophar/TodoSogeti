@@ -15,14 +15,14 @@
     {
       "id": 3,
       "title": "go to meeting",
-      "description": "",
+      "description": "go to the Sogeti HQ for a really important meeting",
       "status": false
     },
     {
       "id": 4,
       "title": "badminton practice",
       "description": "",
-      "status": true
+      "status": false
     }
   ]
 }

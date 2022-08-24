@@ -15,16 +15,19 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
+    MatCardModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
