@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class TodoListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'status'];
+  displayedColumns: string[] = ['id', 'title', 'status', 'statusChange'];
   dataSource!:  MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,10 +20,10 @@ export class TodoListComponent implements OnInit {
   constructor(private api : ApiService) { }
 
   ngOnInit(): void {
-    this.getAllTodos();
+    this.getTodos();
   }
 
-  getAllTodos() {
+  getTodos() {
     this.api.getAllTodos().subscribe({
       next:(res) => {
         this.dataSource = new MatTableDataSource(res);
@@ -43,6 +43,12 @@ export class TodoListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  changeTodoStatus(rowData: any) {
+    rowData.status = !rowData.status;
+    this.api.putTodoStatus(rowData, rowData.id);
+
   }
 
 }

@@ -10,7 +10,7 @@
       "id": 2,
       "title": "fix the office lamp bulb",
       "description": "",
-      "status": false
+      "status": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "id": 4,
       "title": "badminton practice",
       "description": "",
-      "status": false
+      "status": true
     }
   ]
 }

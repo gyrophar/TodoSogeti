@@ -16,6 +16,9 @@ export class ApiService {
     return this.http.get<any>("http://localhost:3000/todos/");
   }
 
-  
+  putTodoStatus(data: any, id: number) {
+    return this.http.put<any>("http://localhost:3000/todos/"+id, data)
+    .subscribe()
+  }
 
 }

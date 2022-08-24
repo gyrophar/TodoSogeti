@@ -13,7 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -37,6 +38,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSortModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
