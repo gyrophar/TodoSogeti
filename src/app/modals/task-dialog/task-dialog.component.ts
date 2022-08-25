@@ -44,6 +44,7 @@ export class TaskDialogComponent implements OnInit {
             alert("Task added successfuly");
             this.todoForm.reset();
             this.dialogRef.close('save');
+            window.location.reload();
           },
           error: () => {
             alert("Error while adding the task");

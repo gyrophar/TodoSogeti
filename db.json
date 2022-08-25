@@ -9,13 +9,13 @@
     {
       "title": "fix the office lamp bulb",
       "description": "Don't fall from the chair! :S",
-      "status": false,
+      "status": true,
       "id": 2
     },
     {
       "title": "Test 1",
       "description": "This task is a test ",
-      "status": true,
+      "status": false,
       "id": 3
     },
     {
@@ -23,6 +23,24 @@
       "description": "",
       "status": true,
       "id": 4
+    },
+    {
+      "title": "Test 2",
+      "description": "",
+      "status": true,
+      "id": 5
+    },
+    {
+      "title": "Test 3",
+      "description": "",
+      "status": true,
+      "id": 6
+    },
+    {
+      "title": "test 4",
+      "description": "",
+      "status": false,
+      "id": 7
     }
   ]
 }
