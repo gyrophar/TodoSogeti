@@ -35,6 +35,7 @@ export class TaskDialogComponent implements OnInit {
     }
   }
 
+  // add a task to db.json
   addTask() {
     if (!this.editData) {
       if (this.todoForm.valid) {
@@ -54,6 +55,7 @@ export class TaskDialogComponent implements OnInit {
     }
   }
 
+  // update Task in db.json
   updateTask() {
     this.api.putTodo(this.todoForm.value, this.editData.id)
     .subscribe({

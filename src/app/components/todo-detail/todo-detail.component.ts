@@ -27,6 +27,7 @@ export class TodoDetailComponent implements OnInit {
     this.getTodoDetail(this.routeId);
   }
 
+  // get the Task data for a given id
   getTodoDetail(id: any) {
     this.api.getTodo(id).subscribe({
       next: (res) => {
@@ -35,11 +36,13 @@ export class TodoDetailComponent implements OnInit {
     })
   }
 
+  // toggles the task status in db.json
   changeTodoStatus(data: any) {
     data.status = !data.status;
     this.api.putTodo(data, data.id).subscribe();
   }
 
+  // Opens a dialog to update the task data in db.json
   editTask(data: any) {
     this.dialog.open(TaskDialogComponent, {
       width: '30%',

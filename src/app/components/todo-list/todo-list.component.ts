@@ -25,6 +25,7 @@ export class TodoListComponent implements OnInit {
     this.getTodos();
   }
 
+  // get all Todos information from db.json
   getTodos() {
     this.api.getAllTodos().subscribe({
       next:(res) => {
@@ -38,6 +39,7 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  // filters todo tasks with user entry
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -47,12 +49,14 @@ export class TodoListComponent implements OnInit {
     }
   }
 
+  // toggles Todo status in DB.json
   changeTodoStatus(rowData: any) {
     rowData.status = !rowData.status
     this.api.putTodo(rowData, rowData.id).subscribe();
     window.location.reload();
   }
 
+  // Deletes a task from db.json
   deleteTodo(rowData: any) {
     this.api.deleteTodo(rowData.id).subscribe({
       next:(res) => {

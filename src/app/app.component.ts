@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // Opens the Dialog component to add a new task
   openDialog() {
     this.dialog.open(TaskDialogComponent, {
       width: '30%'

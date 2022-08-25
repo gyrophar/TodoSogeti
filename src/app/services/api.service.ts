@@ -9,6 +9,10 @@ export class ApiService {
 
   constructor(private http : HttpClient) { }
 
+
+  // CRUD on DB.json
+
+
   postTodo(data: any) {
     return this.http.post<any>("http://localhost:3000/todos/", data);
   }
