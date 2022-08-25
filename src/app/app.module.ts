@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 import { TaskDialogComponent } from './modals/task-dialog/task-dialog.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,8 @@ import { TaskDialogComponent } from './modals/task-dialog/task-dialog.component'
     MatCheckboxModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterTestingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
