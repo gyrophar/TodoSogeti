@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Buy some eggs",
       "description": "",
-      "status": false
+      "status": true
     },
     {
       "title": "fix the office lamp bulb",
@@ -15,13 +15,13 @@
     {
       "title": "Test 1",
       "description": "This task is a test ",
-      "status": false,
+      "status": true,
       "id": 3
     },
     {
       "title": "Send the Test link",
       "description": "",
-      "status": false,
+      "status": true,
       "id": 4
     }
   ]

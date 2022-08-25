@@ -52,8 +52,11 @@ export class TodoListComponent implements OnInit {
   // toggles Todo status in DB.json
   changeTodoStatus(rowData: any) {
     rowData.status = !rowData.status
-    this.api.putTodo(rowData, rowData.id).subscribe();
-    window.location.reload();
+    this.api.putTodo(rowData, rowData.id).subscribe({
+      next:(res) => {
+        window.location.reload();
+      }
+    });    
   }
 
   // Deletes a task from db.json
