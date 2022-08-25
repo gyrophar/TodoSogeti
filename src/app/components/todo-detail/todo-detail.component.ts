@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { TaskDialogComponent } from 'src/app/modals/task-dialog/task-dialog.component';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,7 +16,8 @@ export class TodoDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private api: ApiService
+    private api: ApiService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -29,13 +32,21 @@ export class TodoDetailComponent implements OnInit {
       next: (res) => {
         this.cardData = res;
       },
-    }
-    )
+    })
   }
 
   changeTodoStatus(data: any) {
     data.status = !data.status;
-    this.api.putTodoStatus(data, data.id);
+    this.api.putTodo(data, data.id).subscribe();
   }
 
+  editTask(data: any) {
+    this.dialog.open(TaskDialogComponent, {
+      width: '30%',
+      data: data
+    })
+      .afterClosed().subscribe(() => {
+        this.getTodoDetail(this.routeId);
+      });
+  }
 }

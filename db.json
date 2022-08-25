@@ -10,55 +10,19 @@
       "id": 2,
       "title": "fix the office lamp bulb",
       "description": "",
-      "status": true
+      "status": false
     },
     {
       "id": 3,
       "title": "go to meeting",
       "description": "go to the Sogeti HQ for a really important meeting",
-      "status": false
+      "status": true
     },
     {
       "id": 4,
       "title": "badminton practice",
       "description": "",
       "status": false
-    },
-    {
-      "title": "Make some crepes",
-      "description": "",
-      "status": false,
-      "id": 5
-    },
-    {
-      "title": "blabla",
-      "description": "",
-      "status": true,
-      "id": 6
-    },
-    {
-      "title": "go to friends house",
-      "description": "bring crepes",
-      "status": true,
-      "id": 7
-    },
-    {
-      "title": "ZBGFYUHZBF",
-      "description": "",
-      "status": false,
-      "id": 8
-    },
-    {
-      "title": "TEST ",
-      "description": "",
-      "status": false,
-      "id": 9
-    },
-    {
-      "title": "Test 3",
-      "description": "",
-      "status": false,
-      "id": 10
     }
   ]
 }

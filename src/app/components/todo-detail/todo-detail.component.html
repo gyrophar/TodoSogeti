@@ -19,7 +19,7 @@
     <mat-card-actions>
         <button mat-raised-button color="primary" *ngIf="cardData.status === true" (click)="changeTodoStatus(cardData)">Undo Task</button>
         <button mat-raised-button color="primary" *ngIf="cardData.status === false" (click)="changeTodoStatus(cardData)">Task Done</button>
-        <!-- <button mat-raised-button color="primary">Edit Task</button> -->
+        <button mat-raised-button color="primary" (click)="editTask(cardData)">Edit Task</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class TodoListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'status', 'actions', 'checkDetails'];
+  displayedColumns: string[] = ['id', 'title', 'status', 'actions', 'checkDetails', 'delete'];
   dataSource!:  MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -49,8 +49,19 @@ export class TodoListComponent implements OnInit {
 
   changeTodoStatus(rowData: any) {
     rowData.status = !rowData.status
-    this.api.putTodoStatus(rowData, rowData.id);
+    this.api.putTodo(rowData, rowData.id).subscribe();
     window.location.reload();
   }
 
+  deleteTodo(rowData: any) {
+    this.api.deleteTodo(rowData.id).subscribe({
+      next:(res) => {
+        alert("Task successfully deleted");
+      },
+      error:(err) => {
+        alert("Error while deleting task")
+      }
+    });
+    window.location.reload();
+  }
 }
